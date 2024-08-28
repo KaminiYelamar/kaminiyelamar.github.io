@@ -3621,12 +3621,64 @@ textarea.form-control-lg {
 .nav-link {
   display: block;
   padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
-  font-size: var(--bs-nav-link-font-size);
+  font-size: 20px;
+  /* font-size: var(--bs-nav-link-font-size); */
   font-weight: var(--bs-nav-link-font-weight);
   color: var(--bs-nav-link-color);
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: wiggle 5s ease-in-out infinite;
 }
+
+@keyframes wiggle {
+  0%, 100% {
+      transform: translateX(0);
+  }
+  25% {
+      transform: translateX(-10px);
+  }
+  50% {
+      transform: translateX(10px);
+  }
+  75% {
+      transform: translateX(-10px);
+  }
+}
+
+.icon-color i {
+  color: whitesmoke; 
+}
+
+.icon-color i:hover {
+  color: #00eaff;
+}
+
+.responsive-iframe {
+  width: 100%;
+  height: auto;
+  min-height: 200px; /* Set a minimum height for better usability */
+  border: 0;
+  margin-right: 0;
+}
+
+/* Add this to your CSS file or within a <style> tag */
+@keyframes zoomInOut {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+}
+
+.zoom-animation {
+  animation: zoomInOut 3s ease-in-out infinite;
+}
+
+
 @media (prefers-reduced-motion: reduce) {
   .nav-link {
     transition: none;
@@ -3870,6 +3922,7 @@ textarea.form-control-lg {
   .navbar-expand-sm .navbar-nav .nav-link {
     padding-right: var(--bs-navbar-nav-link-padding-x);
     padding-left: var(--bs-navbar-nav-link-padding-x);
+    
   }
   .navbar-expand-sm .navbar-nav-scroll {
     overflow: visible;
@@ -4011,6 +4064,7 @@ textarea.form-control-lg {
   .navbar-expand-xl .navbar-nav .nav-link {
     padding-right: var(--bs-navbar-nav-link-padding-x);
     padding-left: var(--bs-navbar-nav-link-padding-x);
+    
   }
   .navbar-expand-xl .navbar-nav-scroll {
     overflow: visible;
